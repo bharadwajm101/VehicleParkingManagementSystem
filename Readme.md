@@ -155,279 +155,45 @@ The Vehicle Parking Management System aims to streamline the parking process by 
 ## 10. Folder Structure
 ```
 vehicle-parking-management-system
-
-├── eureka-discovery-service
-
-│   ├── src
-
-│   │   ├── main
-
-│   │   │   ├── java
-
-│   │   │   │   └── com
-
-│   │   │   │       └── parking
-
-│   │   │   │           └── discovery
-
-│   │   │   │               └── EurekaDiscoveryServiceApplication.java
-
-│   │   │   └── resources
-
-│   │   │       ├── application.properties
-
-│   │   │       └── bootstrap.yml
-
-│   ├── pom.xml
-
-│   └── README.md
-
-├── api-gateway
-
-│   ├── src
-
-│   │   ├── main
-
-│   │   │   ├── java
-
-│   │   │   │   └── com
-
-│   │   │   │       └── parking
-
-│   │   │   │           └── gateway
-
-│   │   │   │               └── ApiGatewayApplication.java
-
-│   │   │   └── resources
-
-│   │   │       ├── application.properties
-
-│   │   │       └── bootstrap.yml
-
-│   ├── pom.xml
-
-│   └── README.md
-
-├── user-service
-
-│   ├── src
-
-│   │   ├── main
-
-│   │   │   ├── java
-
-│   │   │   │   └── com
-
-│   │   │   │       └── parking
-
-│   │   │   │           └── user
-
-│   │   │   │               ├── controllers
-
-│   │   │   │               │   └── UserController.java
-
-│   │   │   │               ├── entities
-
-│   │   │   │               │   └── User.java
-
-│   │   │   │               ├── repositories
-
-│   │   │   │               │   └── UserRepository.java
-
-│   │   │   │               ├── services
-
-│   │   │   │               │   └── UserService.java
-
-│   │   │   │               └── dtos
-
-│   │   │   │                   └── UserDTO.java
-
-│   │   │   └── resources
-
-│   │   │       ├── application.properties
-
-│   │   │       └── bootstrap.yml
-
-│   ├── pom.xml
-
-│   └── README.md
-
-├── parking-slot-service
-
-│   ├── src
-
-│   │   ├── main
-
-│   │   │   ├── java
-
-│   │   │   │   └── com
-
-│   │   │   │       └── parking
-
-│   │   │   │           └── slot
-
-│   │   │   │               ├── controllers
-
-│   │   │   │               │   └── ParkingSlotController.java
-
-│   │   │   │               ├── entities
-
-│   │   │   │               │   └── ParkingSlot.java
-
-│   │   │   │               ├── repositories
-
-│   │   │   │               │   └── ParkingSlotRepository.java
-
-│   │   │   │               ├── services
-
-│   │   │   │               │   └── ParkingSlotService.java
-
-│   │   │   │               └── dtos
-
-│   │   │   │                   └── ParkingSlotDTO.java
-
-│   │   │   └── resources
-
-│   │   │       ├── application.properties
-
-│   │   │       └── bootstrap.yml
-
-│   ├── pom.xml
-
-│   └── README.md
-
-├── vehicle-log-service
-
-│   ├── src
-
-│   │   ├── main
-
-│   │   │   ├── java
-
-│   │   │   │   └── com
-
-│   │   │   │       └── parking
-
-│   │   │   │           └── log
-
-│   │   │   │               ├── controllers
-
-│   │   │   │               │   └── VehicleLogController.java
-
-│   │   │   │               ├── entities
-
-│   │   │   │               │   └── VehicleLog.java
-
-│   │   │   │               ├── repositories
-
-│   │   │   │               │   └── VehicleLogRepository.java
-
-│   │   │   │               ├── services
-
-│   │   │   │               │   └── VehicleLogService.java
-
-│   │   │   │               └── dtos
-
-│   │   │   │                   └── VehicleLogDTO.java
-
-│   │   │   └── resources
-
-│   │   │       ├── application.properties
-
-│   │   │       └── bootstrap.yml
-
-│   ├── pom.xml
-
-│   └── README.md
-
-├── reservation-service
-
-│   ├── src
-
-│   │   ├── main
-
-│   │   │   ├── java
-
-│   │   │   │   └── com
-
-│   │   │   │       └── parking
-
-│   │   │   │           └── reservation
-
-│   │   │   │               ├── controllers
-
-│   │   │   │               │   └── ReservationController.java
-
-│   │   │   │               ├── entities
-
-│   │   │   │               │   └── Reservation.java
-
-│   │   │   │               ├── repositories
-
-│   │   │   │               │   └── ReservationRepository.java
-
-│   │   │   │               ├── services
-
-│   │   │   │               │   └── ReservationService.java
-
-│   │   │   │               └── dtos
-
-│   │   │   │                   └── ReservationDTO.java
-
-│   │   │   └── resources
-
-│   │   │       ├── application.properties
-
-│   │   │       └── bootstrap.yml
-
-│   ├── pom.xml
-
-│   └── README.md
-
-├── billing-service
-
-│   ├── src
-
-│   │   ├── main
-
-│   │   │   ├── java
-
-│   │   │   │   └── com
-
-│   │   │   │       └── parking
-
-│   │   │   │           └── billing
-
-│   │   │   │               ├── controllers
-
-│   │   │   │               │   └── BillingController.java
-
-│   │   │   │               ├── entities
-
-│   │   │   │               │   └── Invoice.java
-
-│   │   │   │               ├── repositories
-
-│   │   │   │               │   └── InvoiceRepository.java
-
-│   │   │   │               ├── services
-
-│   │   │   │               │   └── BillingService.java
-
-│   │   │   │               └── dtos
-
-│   │   │   │                   └── InvoiceDTO.java
-
-│   │   │   └── resources
-
-│   │   │       ├── application.properties
-
-│   │   │       └── bootstrap.yml
-
-│   ├── pom.xml
-
-│   └── README.md
-
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── parking
+│   │   │           ├── controllers
+│   │   │           │   ├── UserController.java
+│   │   │           │   ├── ParkingSlotController.java
+│   │   │           │   ├── VehicleLogController.java
+│   │   │           │   ├── ReservationController.java
+│   │   │           │   └── BillingController.java
+│   │   │           ├── entities
+│   │   │           │   ├── User.java
+│   │   │           │   ├── ParkingSlot.java
+│   │   │           │   ├── VehicleLog.java
+│   │   │           │   ├── Reservation.java
+│   │   │           │   └── Invoice.java
+│   │   │           ├── repositories
+│   │   │           │   ├── UserRepository.java
+│   │   │           │   ├── ParkingSlotRepository.java
+│   │   │           │   ├── VehicleLogRepository.java
+│   │   │           │   ├── ReservationRepository.java
+│   │   │           │   └── InvoiceRepository.java
+│   │   │           ├── services
+│   │   │           │   ├── UserService.java
+│   │   │           │   ├── ParkingSlotService.java
+│   │   │           │   ├── VehicleLogService.java
+│   │   │           │   ├── ReservationService.java
+│   │   │           │   └── BillingService.java
+│   │   │           └── dtos
+│   │   │               ├── UserDTO.java
+│   │   │               ├── ParkingSlotDTO.java
+│   │   │               ├── VehicleLogDTO.java
+│   │   │               ├── ReservationDTO.java
+│   │   │               └── InvoiceDTO.java
+│   │   └── resources
+│   │       ├── application.properties
+│   │       └── bootstrap.yml
+├── pom.xml
 └── README.md
  
 ```
