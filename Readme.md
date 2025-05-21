@@ -156,30 +156,282 @@ The backend is developed using **Spring Boot** with **JPA** and **MySQL**, while
 
 ## 10. Folder Structure
 ```
-VehicleParkingManagementSystem/
-├── backend/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/parkingmanagement/
-│   │   │   │   ├── controller/
-│   │   │   │   ├── service/
-│   │   │   │   ├── repository/
-│   │   │   │   ├── model/
-│   │   │   │   └── config/
-│   │   ├── resources/
-│   │   │   ├── application.properties
-│   │   │   └── data.sql
-│   └── pom.xml
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── App.js
-│   │   └── index.js
-│   └── package.json
+vehicle-parking-management-system
+
+├── eureka-discovery-service
+
+│   ├── src
+
+│   │   ├── main
+
+│   │   │   ├── java
+
+│   │   │   │   └── com
+
+│   │   │   │       └── parking
+
+│   │   │   │           └── discovery
+
+│   │   │   │               └── EurekaDiscoveryServiceApplication.java
+
+│   │   │   └── resources
+
+│   │   │       ├── application.properties
+
+│   │   │       └── bootstrap.yml
+
+│   ├── pom.xml
+
+│   └── README.md
+
+├── api-gateway
+
+│   ├── src
+
+│   │   ├── main
+
+│   │   │   ├── java
+
+│   │   │   │   └── com
+
+│   │   │   │       └── parking
+
+│   │   │   │           └── gateway
+
+│   │   │   │               └── ApiGatewayApplication.java
+
+│   │   │   └── resources
+
+│   │   │       ├── application.properties
+
+│   │   │       └── bootstrap.yml
+
+│   ├── pom.xml
+
+│   └── README.md
+
+├── user-service
+
+│   ├── src
+
+│   │   ├── main
+
+│   │   │   ├── java
+
+│   │   │   │   └── com
+
+│   │   │   │       └── parking
+
+│   │   │   │           └── user
+
+│   │   │   │               ├── controllers
+
+│   │   │   │               │   └── UserController.java
+
+│   │   │   │               ├── entities
+
+│   │   │   │               │   └── User.java
+
+│   │   │   │               ├── repositories
+
+│   │   │   │               │   └── UserRepository.java
+
+│   │   │   │               ├── services
+
+│   │   │   │               │   └── UserService.java
+
+│   │   │   │               └── dtos
+
+│   │   │   │                   └── UserDTO.java
+
+│   │   │   └── resources
+
+│   │   │       ├── application.properties
+
+│   │   │       └── bootstrap.yml
+
+│   ├── pom.xml
+
+│   └── README.md
+
+├── parking-slot-service
+
+│   ├── src
+
+│   │   ├── main
+
+│   │   │   ├── java
+
+│   │   │   │   └── com
+
+│   │   │   │       └── parking
+
+│   │   │   │           └── slot
+
+│   │   │   │               ├── controllers
+
+│   │   │   │               │   └── ParkingSlotController.java
+
+│   │   │   │               ├── entities
+
+│   │   │   │               │   └── ParkingSlot.java
+
+│   │   │   │               ├── repositories
+
+│   │   │   │               │   └── ParkingSlotRepository.java
+
+│   │   │   │               ├── services
+
+│   │   │   │               │   └── ParkingSlotService.java
+
+│   │   │   │               └── dtos
+
+│   │   │   │                   └── ParkingSlotDTO.java
+
+│   │   │   └── resources
+
+│   │   │       ├── application.properties
+
+│   │   │       └── bootstrap.yml
+
+│   ├── pom.xml
+
+│   └── README.md
+
+├── vehicle-log-service
+
+│   ├── src
+
+│   │   ├── main
+
+│   │   │   ├── java
+
+│   │   │   │   └── com
+
+│   │   │   │       └── parking
+
+│   │   │   │           └── log
+
+│   │   │   │               ├── controllers
+
+│   │   │   │               │   └── VehicleLogController.java
+
+│   │   │   │               ├── entities
+
+│   │   │   │               │   └── VehicleLog.java
+
+│   │   │   │               ├── repositories
+
+│   │   │   │               │   └── VehicleLogRepository.java
+
+│   │   │   │               ├── services
+
+│   │   │   │               │   └── VehicleLogService.java
+
+│   │   │   │               └── dtos
+
+│   │   │   │                   └── VehicleLogDTO.java
+
+│   │   │   └── resources
+
+│   │   │       ├── application.properties
+
+│   │   │       └── bootstrap.yml
+
+│   ├── pom.xml
+
+│   └── README.md
+
+├── reservation-service
+
+│   ├── src
+
+│   │   ├── main
+
+│   │   │   ├── java
+
+│   │   │   │   └── com
+
+│   │   │   │       └── parking
+
+│   │   │   │           └── reservation
+
+│   │   │   │               ├── controllers
+
+│   │   │   │               │   └── ReservationController.java
+
+│   │   │   │               ├── entities
+
+│   │   │   │               │   └── Reservation.java
+
+│   │   │   │               ├── repositories
+
+│   │   │   │               │   └── ReservationRepository.java
+
+│   │   │   │               ├── services
+
+│   │   │   │               │   └── ReservationService.java
+
+│   │   │   │               └── dtos
+
+│   │   │   │                   └── ReservationDTO.java
+
+│   │   │   └── resources
+
+│   │   │       ├── application.properties
+
+│   │   │       └── bootstrap.yml
+
+│   ├── pom.xml
+
+│   └── README.md
+
+├── billing-service
+
+│   ├── src
+
+│   │   ├── main
+
+│   │   │   ├── java
+
+│   │   │   │   └── com
+
+│   │   │   │       └── parking
+
+│   │   │   │           └── billing
+
+│   │   │   │               ├── controllers
+
+│   │   │   │               │   └── BillingController.java
+
+│   │   │   │               ├── entities
+
+│   │   │   │               │   └── Invoice.java
+
+│   │   │   │               ├── repositories
+
+│   │   │   │               │   └── InvoiceRepository.java
+
+│   │   │   │               ├── services
+
+│   │   │   │               │   └── BillingService.java
+
+│   │   │   │               └── dtos
+
+│   │   │   │                   └── InvoiceDTO.java
+
+│   │   │   └── resources
+
+│   │   │       ├── application.properties
+
+│   │   │       └── bootstrap.yml
+
+│   ├── pom.xml
+
+│   └── README.md
+
 └── README.md
+ 
 ```
 
 ---  
