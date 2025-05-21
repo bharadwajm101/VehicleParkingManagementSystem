@@ -15,7 +15,7 @@
 ---
 
 ## 1. Introduction
-This document outlines the Low-Level Design (LLD) for a **Vehicle Parking Management System** that facilitates efficient parking slot management, vehicle entry/exit logging, reservations, and billing operations. The system aims to streamline both visitor and subscriber parking operations in real time.  
+The Vehicle Parking Management System aims to streamline the parking process by providing features such as user registration, parking slot management, vehicle entry and exit logging, reservation of slots, and billing. The system utilizes a REST API-based backend developed with Spring Boot and a React frontend.  
 
 The backend is developed using **Spring Boot** with **JPA** and **MySQL**, while the frontend is built using **ReactJS**.
 
