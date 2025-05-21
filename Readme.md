@@ -17,8 +17,6 @@
 ## 1. Introduction
 The Vehicle Parking Management System aims to streamline the parking process by providing features such as user registration, parking slot management, vehicle entry and exit logging, reservation of slots, and billing. The system utilizes a REST API-based backend developed with Spring Boot and a React frontend.  
 
-The backend is developed using **Spring Boot** with **JPA** and **MySQL**, while the frontend is built using **ReactJS**.
-
 ---
 
 ## 2. Module Overview
