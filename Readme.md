@@ -164,17 +164,12 @@ vehicle-parking-management-system
 │   │   │           │   ├── ReservationRepository.java
 │   │   │           │   └── InvoiceRepository.java
 │   │   │           ├── services
-│   │   │           │   ├── UserService.java
-│   │   │           │   ├── ParkingSlotService.java
-│   │   │           │   ├── VehicleLogService.java
-│   │   │           │   ├── ReservationService.java
-│   │   │           │   └── BillingService.java
-│   │   │           └── dtos
-│   │   │               ├── UserDTO.java
-│   │   │               ├── ParkingSlotDTO.java
-│   │   │               ├── VehicleLogDTO.java
-│   │   │               ├── ReservationDTO.java
-│   │   │               └── InvoiceDTO.java
+│   │   │               ├── UserService.java
+│   │   │               ├── ParkingSlotService.java
+│   │   │               ├── VehicleLogService.java
+│   │   │               ├── ReservationService.java
+│   │   │               └── BillingService.java
+│   │   │ 
 │   │   └── resources
 │   │       ├── application.properties
 │   │       └── bootstrap.yml
