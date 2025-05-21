@@ -51,46 +51,31 @@ The Vehicle Parking Management System aims to streamline the parking process by 
 ---
 
 ## 4. Module-Wise Design
-### 4.1 User Management Module
-**Features**  
-- Register and login  
-- Assign roles and permissions  
 
-**Entities**  
-- `User`: UserID, Name, Email, Phone, Role, Password (hashed)  
+### 1. User Management
+- **Features**: Registration, login, and role-based access for admins, staff, and customers.
+- **Entities**:
+    - `User`: UserID, Name, Email, Phone, Role, Password (hashed).
 
-### 4.2 Parking Slot Management Module
-**Features**  
-- Add/remove/update parking slots  
-- Check real-time availability  
+### 2. Parking Slot Management
+- **Features**: Add/remove/update parking slots, check real-time availability.
+- **Entities**:
+    - `ParkingSlot`: SlotID, Type (2W/4W), IsOccupied, Location.
 
-**Entities**  
-- `ParkingSlot`: SlotID, Type (2W/4W), IsOccupied, Location  
+### 3. Vehicle Entry & Exit Logging
+- **Features**: Log entry and exit, calculate duration, and update occupancy.
+- **Entities**:
+    - `VehicleLog`: LogID, VehicleNumber, EntryTime, ExitTime, SlotID, UserID.
 
-### 4.3 Vehicle Entry & Exit Logging Module
-**Features**  
-- Log entry and exit  
-- Calculate duration and update occupancy  
+### 4. Reservation System
+- **Features**: View availability, reserve slots, modify or cancel reservations.
+- **Entities**:
+    - `Reservation`: ReservationID, UserID, SlotID, VehicleNumber, StartTime, EndTime, Status.
 
-**Entities**  
-- `VehicleLog`: LogID, VehicleNumber, EntryTime, ExitTime, SlotID, UserID  
-
-### 4.4 Reservation System Module
-**Features**  
-- View availability and reserve slots  
-- Modify or cancel reservations  
-
-**Entities**  
-- `Reservation`: ReservationID, UserID, SlotID, VehicleNumber, StartTime, EndTime, Status  
-
-### 4.5 Billing and Payments Module
-**Features**  
-- Dynamic billing based on time and vehicle type  
-- Payment via multiple modes  
-
-**Entities**  
-- `Invoice`: InvoiceID, UserID, Amount, PaymentMethod, Status, Timestamp  
-
+### 5. Billing and Payments
+- **Features**: Dynamic billing based on time and vehicle type, payment processing.
+- **Entities**:
+    - `Invoice`: InvoiceID, UserID, Amount, PaymentMethod, Status, Timestamp.
 ---
 
 ## 5. Deployment Strategy
